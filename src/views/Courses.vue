@@ -4,8 +4,8 @@
 <table>
   <tbody>
     <tr class="item" v-for="course in courses" :key="course.id">
-      <td> Course name:{{course.coursename}}</td>
-      <td> Code: {{course.coursecode}}</td>
+      <td> Course name:{{course.coursename}} </td>
+      <td> Code: <a href="Acourse/${course.id}">{{course.coursecode}}</a></td>
       <td> Max number of students:{{course.max}}</td>
       <td> registred students: {{course.registered}}</td>
       <td> avaible places: {{course.available}}</td>
@@ -51,7 +51,7 @@ h3 {
   color: rgb(8, 110, 110);
 }
 .item{
-  background-color: grey;
+  background-color: grey  ;
 }
 .container {
   background: #d5d7d8;
