@@ -5,7 +5,7 @@
   <tbody>
     <tr class="item" v-for="course in courses" :key="course.id">
       <td> Course name:{{course.coursename}} </td>
-      <td> Code: <a href="Acourse/${course.id}">{{course.coursecode}}</a></td>
+      <td> Code: <a href= "" @click="editCourse(course.id)" >{{course.coursecode}}</a></td>
       <td> Max number of students:{{course.max}}</td>
       <td> registred students: {{course.registered}}</td>
       <td> avaible places: {{course.available}}</td>
@@ -30,12 +30,16 @@ export default {
     };
   },
   methods: {
+    
     fetchRecords() {
       fetch(`http://localhost:3000/api/courses`)
         .then((response) => response.json())
         .then((data) => (this.courses = data))
         .catch((err) => console.log(err.message));
   },
+  editCourse(id){
+    this.$router.push(`/Acourse/${id}`)
+  }
   },
   mounted() {
     this.fetchRecords();
