@@ -1,6 +1,20 @@
 <template>
 <h3>Courses</h3>
+<div class="container">
+<table>
+  <tbody>
+    <tr class="item" v-for="course in courses" :key="course.id">
+      <td> Course name:{{course.coursename}}</td>
+      <td> Code: {{course.coursecode}}</td>
+      <td> Max number of students:{{course.max}}</td>
+      <td> registred students: {{course.registered}}</td>
+      <td> avaible places: {{course.available}}</td>
+      <td> No. of groups:  {{course.groupsnumbers}}</td>
+    </tr>
+  </tbody>
+</table>
 
+</div>
 
 
 
@@ -35,5 +49,18 @@ export default {
 h3 {
   text-align: center;
   color: rgb(8, 110, 110);
+}
+.item{
+  background-color: grey;
+}
+.container {
+  background: #d5d7d8;
+  box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.2);
+  margin-bottom: 30px;
+  padding: 10px 20px;
+  margin: auto;
+  width: 40%;
+  display: flex;
+  justify-content: center;
 }
 </style>
